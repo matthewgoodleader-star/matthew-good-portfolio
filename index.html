@@ -575,31 +575,77 @@
       </div>
     </section>
 
-    <!-- Pursuits / Hobbies Section -->
+    <!-- Pursuits & Creative Engineering Section -->
     <section id="hobbies" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div class="glass-card rounded-3xl p-8 sm:p-12">
-        <div class="max-w-3xl">
-          <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Professional Pursuits & Hands-On Engineering</h2>
-          <p class="text-slate-300 text-sm leading-relaxed mb-6">
-            Beyond corporate operations and support infrastructure, I apply the same meticulous problem-solving, precision engineering, and quality discipline to hands-on technical crafts.
+        <div class="max-w-4xl">
+          <h2 class="text-3xl font-bold tracking-tight text-white mb-3">Pursuits, Creative Engineering & Hands-On Craft</h2>
+          <p class="text-slate-300 text-sm leading-relaxed mb-8">
+            Beyond enterprise support operations, I apply the same disciplined problem-solving, precision execution, and technical rigor across digital design, audio-visual production, music, and outdoorsmanship.
           </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800">
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Pursuit 1: CAD & Precision Design -->
+            <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 hover:border-sky-500/30 transition-all">
               <h3 class="text-white font-bold text-base mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-water text-sky-400"></i> River Kayak Navigation
+                <i class="fa-solid fa-cubes text-sky-400"></i> CAD & 3D Modeling
               </h3>
               <p class="text-xs text-slate-400 leading-relaxed">
-                Avid kayak angler navigating river systems and tailwaters (such as the Stillwater River and Michigan waterways), mastering environmental variables, currents, and self-reliance.
+                Precision 3D object modeling, geometric modifications, and mechanical prototyping for physical crafts and custom components.
               </p>
             </div>
-            <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800">
+
+            <!-- Pursuit 2: Audio Engineering & Music Production -->
+            <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 hover:border-purple-500/30 transition-all">
               <h3 class="text-white font-bold text-base mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-palette text-purple-400"></i> Precision Lure Crafting & Airbrushing
+                <i class="fa-solid fa-sliders text-purple-400"></i> Audio Engineering
               </h3>
               <p class="text-xs text-slate-400 leading-relaxed">
-                Designing, airbrushing, and applying 2K/4K automotive clear-coats to custom multi-segmented glide baits—demanding strict adherence to chemical safety, masking precision, and iterative testing.
+                Sound design, multitrack recording, signal processing, mixing, and studio production with high technical precision.
               </p>
             </div>
+
+            <!-- Pursuit 3: Multi-Instrumentalist -->
+            <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 hover:border-amber-500/30 transition-all">
+              <h3 class="text-white font-bold text-base mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-guitar text-amber-400"></i> Guitar, Bass & Drums
+              </h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Active multi-instrumentalist playing guitar, bass, and drums—combining rhythmic discipline, coordination, and creative composition.
+              </p>
+            </div>
+
+            <!-- Pursuit 4: Video Editing -->
+            <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 hover:border-pink-500/30 transition-all">
+              <h3 class="text-white font-bold text-base mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-film text-pink-400"></i> Video Editing & Post-Production
+              </h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Pacing, color grading, motion graphics, and narrative editing for digital media production and visual content.
+              </p>
+            </div>
+
+            <!-- Pursuit 5: River Kayak Fishing -->
+            <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 hover:border-cyan-500/30 transition-all">
+              <h3 class="text-white font-bold text-base mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-water text-cyan-400"></i> Kayak Fishing & Lure Crafting
+              </h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Navigating river systems and tailwaters while handcrafting, airbrushing, and clear-coating custom multi-segmented glide baits.
+              </p>
+            </div>
+
+            <!-- Pursuit 6: Hunting & Camping -->
+            <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 hover:border-emerald-500/30 transition-all">
+              <h3 class="text-white font-bold text-base mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-campground text-emerald-400"></i> Hunting & Wilderness Camping
+              </h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Outdoor survivalism, land navigation, bow/firearm discipline, and wilderness camping across backcountry terrains.
+              </p>
+            </div>
+
           </div>
         </div>
       </div>
@@ -799,6 +845,10 @@
       // Recommendations / Testimonials
       else if (query.includes('recommendation') || query.includes('sam') || query.includes('michael') || query.includes('chris') || query.includes('daniel') || query.includes('testimonial')) {
         return "Matthew has verified LinkedIn recommendations from direct reports and peers (Sam Puterbaugh, Michael Zirpola, Chris Stephens, and Daniel Shepherd Jr.) highlighting his leadership discipline, commitment to internal promotion, and ability to scale complex operations.";
+      }
+      // Pursuits & Personal Skills (CAD, Audio, Music, Video, Outdoors)
+      else if (query.includes('cad') || query.includes('audio') || query.includes('guitar') || query.includes('bass') || query.includes('drum') || query.includes('video') || query.includes('kayak') || query.includes('hunt') || query.includes('camp') || query.includes('music') || query.includes('pursuit') || query.includes('hobby')) {
+        return "Outside of leadership, Matthew is an active multi-instrumentalist (guitar, bass, drums), audio engineer, and video editor. He also engages in 3D CAD modeling, custom lure crafting/airbrushing, river kayak fishing, hunting, and wilderness camping.";
       }
       // Contact / Hiring
       else if (query.includes('contact') || query.includes('email') || query.includes('hire') || query.includes('reach') || query.includes('interview')) {
