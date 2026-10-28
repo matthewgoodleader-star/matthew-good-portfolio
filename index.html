@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matthew Good - Operations & Support Leader Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Inter & JetBrains Mono Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              400: '#38bdf8',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#03446a',
+              900: '#082f49',
+            },
+            accent: {
+              400: '#c084fc',
+              500: '#a855f7',
+              600: '#9333ea',
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+
+    /* Glassmorphism Styles */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+    
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.3);
+      box-shadow: 0 12px 40px 0 rgba(14, 165, 233, 0.15);
+    }
+
+    .glass-nav {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-pill {
+      background: linear-gradient(135deg, #0099ff 0%, #7b2cbf 100%);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 153, 255, 0.3);
+    }
+    .gradient-pill:hover {
+      background: linear-gradient(135deg, #0088ff 0%, #6a1b9a 100%);
+      box-shadow: 0 6px 20px rgba(123, 44, 191, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen selection:bg-sky-500 selection:text-white">
+
+  <!-- Background Mesh Glows -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-sky-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
+    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+    <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 4s;"></div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-40 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-purple-600 flex items-center justify-center font-bold text-white shadow-lg group-hover:scale-105 transition-transform">
+          MG
+        </div>
+        <div>
+          <span class="text-lg font-bold tracking-tight block">Matthew Good</span>
+          <span class="text-xs text-sky-400 font-mono tracking-wide">OPERATIONS & SUPPORT LEADER</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links & Button -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#metrics" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors">Metrics</a>
+        <a href="#experience" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors">Experience</a>
+        <a href="#recommendations" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors">Recommendations</a>
+        <a href="#hobbies" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors">Pursuits</a>
+        
+        <!-- Ask Kip Pill Button -->
+        <button id="openKipBtn" class="gradient-pill px-6 py-2.5 rounded-2xl text-sm font-semibold text-white flex items-center gap-2.5 shadow-lg border border-white/20">
+          <i class="fa-solid fa-robot text-sky-200"></i>
+          <span>Ask Kip (AI Assistant)</span>
+        </button>
+      </nav>
+
+      <!-- Mobile Kip Button -->
+      <div class="md:hidden flex items-center">
+        <button id="openKipBtnMobile" class="gradient-pill px-4 py-2 rounded-2xl text-xs font-semibold text-white flex items-center gap-2 shadow-lg border border-white/20">
+          <i class="fa-solid fa-robot text-sky-200"></i>
+          <span>Ask Kip (AI Assistant)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="glass-card rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden">
+        <div class="max-w-4xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-mono mb-6">
+            <span class="w-2 h-2 rounded-full bg-sky-400 animate-ping"></span>
+            16+ YEARS OPERATIONAL LEADERSHIP
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
+            Scaling Support Infrastructure, Hardware Rollouts & <span class="gradient-text">High-Trust Operational Teams</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-300 font-light leading-relaxed mb-8">
+            Operations leader with 16+ years of experience scaling technical support teams, optimizing enterprise hardware rollouts, and building high-performing leadership pipelines. Proven track record of turning complex operational challenges into reliable, data-driven systems while developing talent from within.
+          </p>
+
+          <!-- Action Bar -->
+          <div class="flex flex-wrap items-center gap-4">
+            <button onclick="document.getElementById('openKipBtn').click()" class="gradient-pill px-6 py-3.5 rounded-xl font-medium text-white flex items-center gap-3 text-base shadow-xl">
+              <i class="fa-solid fa-comments"></i>
+              <span>Ask Kip (AI Assistant)</span>
+            </button>
+            <a href="#experience" class="px-6 py-3.5 rounded-xl font-medium text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 transition-all flex items-center gap-2 text-base">
+              <i class="fa-solid fa-briefcase text-slate-400"></i>
+              <span>Explore Career History</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Decorative Mesh Background Glow -->
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-sky-500/10 rounded-full blur-2xl pointer-events-none"></div>
+      </div>
+    </section>
+
+    <!-- Leadership Quote Banner -->
+    <section class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-16">
+      <div class="glass-card rounded-2xl p-6 sm:p-8 border-l-4 border-l-sky-500 flex flex-col md:flex-row items-center gap-6">
+        <div class="w-12 h-12 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0 text-xl">
+          <i class="fa-solid fa-quote-left"></i>
+        </div>
+        <div>
+          <blockquote class="text-lg sm:text-xl text-slate-200 font-medium italic">
+            "True leadership isn't hoarding top talent—it's developing people so effectively that they elevate the entire enterprise, creating a culture of trust and high performance."
+          </blockquote>
+          <p class="text-xs text-sky-400 font-mono mt-2 uppercase tracking-wider">— Matthew Good Philosophy</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9-Card Metrics Grid Section with Filter Tabs -->
+    <section id="metrics" class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight text-white">Operational Impact & Key Metrics</h2>
+          <p class="text-slate-400 text-sm mt-1">Data-backed outcomes delivered across scale, culture, and high-stakes rollouts.</p>
+        </div>
+
+        <!-- Metric Filter Buttons -->
+        <div class="flex flex-wrap gap-2 bg-slate-900/80 p-1.5 rounded-xl border border-slate-800 self-start md:self-auto">
+          <button onclick="filterMetrics('all')" class="metric-tab active px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all bg-sky-500 text-white">ALL METRICS</button>
+          <button onclick="filterMetrics('support')" class="metric-tab px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-slate-400 hover:text-slate-200 transition-all">SUPPORT & EFFICIENCY</button>
+          <button onclick="filterMetrics('talent')" class="metric-tab px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-slate-400 hover:text-slate-200 transition-all">TALENT & CULTURE</button>
+          <button onclick="filterMetrics('scale')" class="metric-tab px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-slate-400 hover:text-slate-200 transition-all">SCALE & LOGISTICS</button>
+        </div>
+      </div>
+
+      <div id="metricsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1 -->
+        <div class="metric-card glass-card glass-card-hover p-6 rounded-2xl flex flex-col justify-between" data-category="support">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-sky-500/10 text-sky-400 text-xs font-mono font-medium border border-sky-500/20">CALL CENTER SUPPORT</span>
+              <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20"><i class="fa-solid fa-arrow-trend-up mr-1"></i>Efficiency</span>
+            </div>
+            <div class="text-3xl font-extrabold text-white mb-1">85% ↑ <span class="text-sm font-normal text-slate-400">Sustained</span></div>
+            <h3 class="text-base font-semibold text-slate-200 mb-2">Overall Call Support FCR</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Maintained 85% First Contact Resolution across complex tier-1 call center operations, eliminating costly redundant escalations.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="metric-card glass-card glass-card-hover p-6 rounded-2xl flex flex-col justify-between" data-category="support">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-400 text-xs font-mono font-medium border border-purple-500/20">EMAIL SUPPORT FCR</span>
+              <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20"><i class="fa-solid fa-arrow-trend-up mr-1"></i>+16% Lift</span>
+            </div>
+            <div class="text-3xl font-extrabold text-white mb-1">91% ↑ <span class="text-sm font-normal text-slate-400">Elevated from 75%</span></div>
+            <h3 class="text-base font-semibold text-slate-200 mb-2">Restructured Email Support FCR</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Inherited email queue, built real-time KPI dashboards, and drastically cut resolution time, elevating FCR from 75% to 91%.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="metric-card glass-card glass-card-hover p-6 rounded-2xl flex flex-col justify-between" data-category="talent">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-xs font-mono font-medium border border-indigo-500/20">TRAINING & ONBOARDING</span>
+              <span class="text-xs font-mono text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded border border-sky-500/20">Talent</span>
+            </div>
+            <div class="text-3xl font-extrabold text-white mb-1">66% <span class="text-sm font-normal text-slate-400">Ramp Time Reduction</span></div>
+            <h3 class="text-base font-semibold text-slate-200 mb-2">New Hire Onboarding Acceleration</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Overhauled technical training framework to cut time-to-proficiency, placing staff into active multi-client queues drastically faster.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="metric-card glass-card glass-card-hover p-6 rounded-2xl flex flex-col justify-between" data-category="talent">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-400 text-xs font-mono font-medium border border-blue-500/20">MULTI-CLIENT QUALIFICATION</span>
+              <span class="text-xs font-mono text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20">Cross-Function</span>
+            </div>
+            <div class="text-3xl font-extrabold text-white mb-1">85% <span class="text-sm font-normal text-slate-400">&lt;1 Year Ramp</span></div>
+            <h3 class="text-base font-semibold text-slate-200 mb-2">Team Multi-Client Versatility</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Qualified 85% of support staff across 37+ enterprise clients in under 1 year, shattering the previous 2-3 year historical benchmark.</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="metric-card glass-card glass-card-hover p-6 rounded-2xl flex flex-col justify-between" data-category="talent">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-mono font-medium border border-emerald-500/20">TALENT PIPELINE ENGINE</span>
+              <span class="text-xs font-mono text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">Promotions</span>
+            </div>
+            <div class="text-3xl font-extrabold text-white mb-1">70+ <span class="text-sm font-normal text-slate-400">Promotions Managed</span></div>
+            <h3 class="text-base font-semibold text-slate-200 mb-2">Internal Leadership Engine</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Promoted 70+ agents to Tier 2, DevOps, Content Ops, PM, and NetOps. Managed 87% of all company support leadership promotions.</p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="metric-card glass-card glass-card-hover p-6 rounded-2xl flex flex-col justify-between" data-category="scale">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-400 text-xs font-mono font-medium border border-amber-500/20">MILITARY SUPPLY LOGISTICS</span>
+              <span class="text-xs font-mono text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">USMC</span>
+            </div>
+            <div class="text-3xl font-extrabold text-white mb-1">100% <span class="text-sm font-normal text-slate-400">Force Readiness</span></div>
+            <h3 class="text-base font-semibold text-slate-200 mb-2">USMC Operational Readiness Award</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Earned Certificate of Commendation for maintaining 100% force readiness for tank platoon combat assets and multi-million $ supply lines.</p>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="metric-card glass-card glass-card-hover p-6 rounded-2xl flex flex-col justify-between" data-category="support">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-mono font-medium border border-cyan-500/20">KNOWLEDGE MANAGEMENT</span>
+              <span class="text-xs font-mono text-cyan-300 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">Doc Expansion</span>
+            </div>
+            <div class="text-3xl font-extrabold text-white mb-1">38% ↑ <span class="text-sm font-normal text-slate-400">KB Submissions</span></div>
+            <h3 class="text-base font-semibold text-slate-200 mb-2">Knowledge Base Expansion</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Increased knowledge base submissions & feedback approvals by 38%, building operational redundancy and lowering front-line resolution friction.</p>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="metric-card glass-card glass-card-hover p-6 rounded-2xl flex flex-col justify-between" data-category="talent">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-rose-500/10 text-rose-400 text-xs font-mono font-medium border border-rose-500/20">CULTURE & SATISFACTION</span>
+              <span class="text-xs font-mono text-rose-300 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20">5 Yrs Growth</span>
+            </div>
+            <div class="text-3xl font-extrabold text-white mb-1">5 Yrs <span class="text-sm font-normal text-slate-400">Consecutive</span></div>
+            <h3 class="text-base font-semibold text-slate-200 mb-2">Team Satisfaction Growth</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Measured via annual voluntary anonymous team feedback surveys, driving continuous cultural improvements and rising satisfaction 5 years in a row.</p>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="metric-card glass-card glass-card-hover p-6 rounded-2xl flex flex-col justify-between" data-category="scale">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-violet-500/10 text-violet-400 text-xs font-mono font-medium border border-violet-500/20">HARDWARE DEPLOYMENT SCALE</span>
+              <span class="text-xs font-mono text-violet-300 bg-violet-500/10 px-2 py-0.5 rounded border border-violet-500/20">Max Capacity</span>
+            </div>
+            <div class="text-3xl font-extrabold text-white mb-1">72,500+ <span class="text-sm font-normal text-slate-400">Max Endpoint Scale</span></div>
+            <h3 class="text-base font-semibold text-slate-200 mb-2">Scaled Hardware Rollouts</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Scaled provisioning, hiring, and training frameworks for 30+ major hardware rollouts ranging from 3,000 to 72,500+ devices.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Verbatim Experience Section -->
+    <section id="experience" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold tracking-tight text-white">Professional Experience</h2>
+        <p class="text-slate-400 text-sm mt-1">Detailed history of leadership positions, hardware rollouts, and operational achievements.</p>
+      </div>
+
+      <div class="space-y-12">
+
+        <!-- Company 1: STRATACACHE -->
+        <div class="glass-card rounded-3xl p-6 sm:p-10 border-l-4 border-l-sky-500">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-800">
+            <div>
+              <h3 class="text-2xl font-bold text-white flex items-center gap-3">
+                <i class="fa-solid fa-building text-sky-400"></i>
+                STRATACACHE
+              </h3>
+              <p class="text-sm font-mono text-sky-400 mt-1">16 yrs 4 mos total tenure</p>
+            </div>
+            <span class="px-4 py-1.5 rounded-full bg-sky-500/10 text-sky-300 text-xs font-mono border border-sky-500/20">Dayton, OH</span>
+          </div>
+
+          <div class="space-y-10">
+
+            <!-- Role 1 -->
+            <div class="relative pl-6 sm:pl-8 border-l border-slate-700 space-y-3">
+              <div class="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-sky-400 ring-4 ring-slate-900"></div>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h4 class="text-lg font-bold text-slate-100">Technical Support Manager</h4>
+                <span class="text-xs font-mono text-slate-400 bg-slate-800/80 px-3 py-1 rounded-md">May 2013 – Present · 13 yrs 6 mos</span>
+              </div>
+              <ul class="space-y-3 text-sm text-slate-300 list-disc pl-4 marker:text-sky-400 leading-relaxed">
+                <li><strong>Scaled Enterprise Hardware Rollouts:</strong> Successfully scaled provisioning, hiring, and training frameworks for 30+ major hardware deployments (ranging from 3,000 to 72,500+ devices) for global brands, converting high-profile client pilots into long-term support relationships with multi-year contract renewals.</li>
+                <li><strong>Built a Premier Talent Pipeline:</strong> Developed an internal leadership engine that successfully promoted 70+ agents into advanced roles (Tier 2, DevOps, Content Ops, Project Management, Account Management, and Network Ops); managed 87% of all company support agents promoted into leadership positions.</li>
+                <li>Designed a support Quality Assurance and 360-degree feedback model to optimize Tier 1 and Tier 2 resolution rates, eliminating redundant escalations via coaching, aligning team expectations, and enhancing knowledge base clarity to improve client outcomes.</li>
+                <li>Inherited and restructured email support, creating KPI dashboards to track metrics, cut resolution times, and elevate First Contact Resolution (FCR) from 75% to 91%</li>
+                <li>Overhauled the technical training framework to cut new hire ramp-up time by 66%, placing 85% of staff across 37+ enterprise client environments within 1 year (down from the historical 2–3 year benchmark) to directly drive core KPI improvements.</li>
+                <li>Facilitated cross-functional team, manager, and department leadership forums focused on elevating team culture, aligning on upcoming changes, celebrating wins, and systematically removing operational roadblocks to consistently drive KPI performance.</li>
+                <li><strong>Drove Knowledge Sharing:</strong> Increased Knowledge Base (KB) submissions and feedback approvals by 38%, building operational redundancy and lowering resolution friction for front-line reps.</li>
+                <li><strong>Fostered High-Trust Culture:</strong> Introduced annual voluntary anonymous team feedback surveys to measure leadership effectiveness, driving continuous cultural improvements and rising team satisfaction scores for 5 consecutive years.</li>
+              </ul>
+            </div>
+
+            <!-- Role 2 -->
+            <div class="relative pl-6 sm:pl-8 border-l border-slate-700 space-y-3">
+              <div class="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-slate-500 ring-4 ring-slate-900"></div>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h4 class="text-lg font-bold text-slate-100">Network Operations Center Supervisor</h4>
+                <span class="text-xs font-mono text-slate-400 bg-slate-800/80 px-3 py-1 rounded-md">Oct 2012 – May 2013 · 8 mos</span>
+              </div>
+              <ul class="space-y-3 text-sm text-slate-300 list-disc pl-4 marker:text-sky-400 leading-relaxed">
+                <li>Designed and executed a rapid onboarding framework that successfully trained 75+ support agents in 6 months for a global digital menu board deployment (14,500 sites / 72,500 devices).</li>
+                <li>Standardized proactive network monitoring training procedures supporting over 55 enterprise clients and 2.1 million deployed devices.</li>
+                <li>Engineered hourly call forecasting models to accurately align staffing during peak volume, reducing agent burnout, eliminating idle time, and significantly improving response times.</li>
+                <li>Reduced inbound support call volume by 24% by automating reporting tasks, reallocating NOC personnel, and raising daily proactive outbound call expectations.</li>
+              </ul>
+            </div>
+
+            <!-- Role 3 -->
+            <div class="relative pl-6 sm:pl-8 border-l border-slate-700 space-y-3">
+              <div class="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-slate-500 ring-4 ring-slate-900"></div>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h4 class="text-lg font-bold text-slate-100">Technical Support Analyst</h4>
+                <span class="text-xs font-mono text-slate-400 bg-slate-800/80 px-3 py-1 rounded-md">Jul 2010 – Oct 2012 · 2 yrs 4 mos</span>
+              </div>
+              <ul class="space-y-3 text-sm text-slate-300 list-disc pl-4 marker:text-sky-400 leading-relaxed">
+                <li>Developed a structured, step-by-step customer de-escalation model, training other support staff on progressive call handling techniques to de-escalate hostile customers and field service technicians.</li>
+                <li>Provided phone and technical support for enterprise hardware, network connectivity, and media content playback systems.</li>
+                <li>Authored detailed case logs and KB articles that improved hardware provisioning workflows ahead of major enterprise deployments.</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Company 2: COMPUTER ZOO -->
+        <div class="glass-card rounded-3xl p-6 sm:p-10 border-l-4 border-l-purple-500">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+            <div>
+              <h3 class="text-2xl font-bold text-white flex items-center gap-3">
+                <i class="fa-solid fa-microchip text-purple-400"></i>
+                COMPUTER ZOO
+              </h3>
+              <p class="text-sm font-semibold text-purple-300 mt-1">Operational Specialist</p>
+            </div>
+            <span class="text-xs font-mono text-slate-400 bg-slate-800/80 px-3 py-1 rounded-md">Jun 2008 – Jul 2010 · 2 yrs 2 mos</span>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-300 list-disc pl-4 marker:text-purple-400 leading-relaxed">
+            <li>Managed inventory scheduling, purchasing orders, and vendor RMA processes based on weekly and quarterly sales trends.</li>
+            <li>Managed component and laptop repair sales, advising customers on exact hardware replacements, upgrades, and system compatibility to drive sales revenue and fast repair turnaround times.</li>
+            <li>Provided custom PC/server builds, diagnostics, and technical support via phone and email.</li>
+          </ul>
+        </div>
+
+        <!-- Company 3: UNITED STATES MARINE CORPS -->
+        <div class="glass-card rounded-3xl p-6 sm:p-10 border-l-4 border-l-amber-500">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+            <div>
+              <h3 class="text-2xl font-bold text-white flex items-center gap-3">
+                <i class="fa-solid fa-shield-halved text-amber-400"></i>
+                UNITED STATES MARINE CORPS
+              </h3>
+              <p class="text-sm font-semibold text-amber-300 mt-1">Supply Chain Operations Specialist</p>
+            </div>
+            <span class="text-xs font-mono text-slate-400 bg-slate-800/80 px-3 py-1 rounded-md">Aug 2002 – Aug 2006 · 4 yrs 1 mo</span>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-300 list-disc pl-4 marker:text-amber-400 leading-relaxed">
+            <li>Earned a Certificate of Commendation for streamlining the requisitioning, inventory management, and parts tracking pipeline for a tank platoon, achieving and maintaining 100% operational force readiness for critical combat assets.</li>
+            <li>Managed multi-million dollar inventory, supply account balances, and high-value capital assets, conducting routine reconciliations, physical audits, and discrepancy resolutions to ensure 100% material accountability.</li>
+            <li>Executed end-to-end procurement and parts-tracking operations using military logistical databases; tracked backordered components and coordinated critical expedited orders to minimize equipment downtime.</li>
+            <li>Managed receiving, staging, hazardous materials handling, and tactical staging for unit deployments while optimizing storage space, route logistics, and cargo movements to align with unit operational timelines.</li>
+            <li>Partnered directly with platoon leaders, maintenance staff, and command staff to provide daily logistics readiness briefings, forecast spare parts demand, and eliminate supply chain bottlenecks prior to field exercises and deployments.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Verbatim Recommendations Section -->
+    <section id="recommendations" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold tracking-tight text-white">LinkedIn Recommendations</h2>
+        <p class="text-slate-400 text-sm mt-1">Unedited, verbatim testimonials from direct reports and peers.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Recommendation 1 -->
+        <div class="glass-card glass-card-hover p-8 rounded-3xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center font-bold text-white text-lg">
+                SP
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-white">Sam Puterbaugh</h3>
+                <p class="text-xs text-sky-400 font-mono">Director Strategic Project at TechLink Services</p>
+                <p class="text-xs text-slate-400">October 22, 2026, Sam reported to Matt directly</p>
+              </div>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed italic">
+              "Matt was my first Manager at Stratacache, and showed me the ropes from Day 1! He was then,  and continues to be a shining example of leadership in the workplace all while maintaining a positive attitude! Many of the practices and management tactics I still eploy today came from Mr. Good. Even After leaving Matt's team and advancing my own career, I would say to Matt "I would would work for you again, anytime", and that still holds true today. Any company looking to build a strong, unified support team will be lucky to have you!"
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-slate-500 flex items-center gap-2">
+            <i class="fa-brands fa-linkedin text-sky-400"></i> Verified LinkedIn Endorsement
+          </div>
+        </div>
+
+        <!-- Recommendation 2 -->
+        <div class="glass-card glass-card-hover p-8 rounded-3xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-500 to-pink-600 flex items-center justify-center font-bold text-white text-lg">
+                DS
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-white">Daniel Shepherd Jr</h3>
+                <p class="text-xs text-purple-400 font-mono">Technical Support Manager at Stratacache</p>
+                <p class="text-xs text-slate-400">October 16, 2026, Daniel worked with Matt on the same team</p>
+              </div>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed italic">
+              "Working with Matt has been an absolute pleasure. He's very reliable, super dedicated, and highly intelligent. I can always count on him to offer a fresh perspective on difficult situations, think outside of the box, and share his thoughts and ideas. Matt always tries to see the good in everything and doesn't let any misstep, mistake, or mishap get him down or stop him from pushing forward.<br><br>As a leader, Matt stands among the best. He leads his team with dedication and determination. He's always receptive of their needs and goes above and beyond to ensure they are taken care of. I have incorporated many aspects of his style of management into my own, while also learning from his interpersonal skills to better my own.<br><br>Matt has been a hugely positive influence in not only my career, but in my life as well. I will always be greatful for the talks we've had, the experiences we'shared, and the advises we've exchanged."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-slate-500 flex items-center gap-2">
+            <i class="fa-brands fa-linkedin text-sky-400"></i> Verified LinkedIn Endorsement
+          </div>
+        </div>
+
+        <!-- Recommendation 3 -->
+        <div class="glass-card glass-card-hover p-8 rounded-3xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-600 flex items-center justify-center font-bold text-white text-lg">
+                CS
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-white">Chris Stephens</h3>
+                <p class="text-xs text-emerald-400 font-mono">Support Supervisor ~ Stratacache</p>
+                <p class="text-xs text-slate-400">October 16, 2026, Chris reported to Matt directly</p>
+              </div>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed italic">
+              "Having had the opportunity to work under Matt Good at Stratacache, I can confidently say he is one of the most supportive and dependable leaders I've ever worked with. Matt has a genuine dedication to his team, not only in helping them succeed in their roles but also in encouraging their professional growth.<br><br>What I've appreciated most about Matt's leadership is his ability to empower those he manages, giving them the trust and independence to make decisions while providing the guidance and support needed to succeed. He has always encouraged me to take initiative and approach challenges in my own way, while still being there to offer mentorship when needed. That balance of trust and support has played a significant role in helping me grow and become a better supervisor.<br><br>Matt leads by example, bringing knowledge, patience, and understanding to even the most challenging situations. He's approachable, willing to listen, and genuinely cares about the success of both his team and the individuals within it.<br><br>I'm grateful to have had the opportunity to learn from Matt and work alongside him. His leadership has made a lasting impact on my professional development, and I would gladly welcome the opportunity to work with him again."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-slate-500 flex items-center gap-2">
+            <i class="fa-brands fa-linkedin text-sky-400"></i> Verified LinkedIn Endorsement
+          </div>
+        </div>
+
+        <!-- Recommendation 4 -->
+        <div class="glass-card glass-card-hover p-8 rounded-3xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-500 to-orange-600 flex items-center justify-center font-bold text-white text-lg">
+                MZ
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-white">Michael Zirpola</h3>
+                <p class="text-xs text-amber-400 font-mono">VP of Product Management at New Dawn Labs working on Footprint SAS</p>
+                <p class="text-xs text-slate-400">September 29, 2026, Michael reported to Matt directly</p>
+              </div>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed italic">
+              "Matt Good trained me and was my manager when I joined Stratacache, and he is a big reason I became the manager and professional I am today. He is a leader in the truest sense of the word. I was proud to call him a mentor, a friend, and a sounding board.<br><br>Matt is a former Marine who leads by being concise and compassionate. He is direct without being harsh, and patient with people who are still learning. When he explained something, I knew what was expected and why it mattered. That clarity made him easy to learn from and easy to trust.<br><br>Matt believed in process. He pushed for meaningful change and optimization, and that work helped take Stratacache support from a startup to the leader in its field. He was just as committed to recognizing the people doing the work. He coordinated team rewards and events on a shoestring budget, and rewarding and recognizing others was important to him.<br><br>Matt also has an exceptional eye for talent. I relied on his judgment when evaluating people, and I rarely saw him wrong. He knew that the people he trained and developed would eventually leave his team. Stratacache promotes from within, so his best employees moved on to bigger roles. He developed them anyway, and generously. The talent he built fueled that company.<br><br>Outside of work, Matt is an avid outdoorsman and a successful entrepreneur. He brings the same discipline, judgment, and steadiness to his businesses that he brought to leading his team.<br><br>I still draw on what Matt taught me every time I lead a team or work through a hard conversation. Any team would be lucky to have him, and I'm grateful I got to learn from him."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-slate-500 flex items-center gap-2">
+            <i class="fa-brands fa-linkedin text-sky-400"></i> Verified LinkedIn Endorsement
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Hobbies & Personal Pursuits Section -->
+    <section id="hobbies" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-16">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold tracking-tight text-white">Hobbies & Personal Pursuits</h2>
+        <p class="text-slate-400 text-sm mt-1">Disciplines, creative outlets, and passions outside of operations.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Hobby 1 -->
+        <div class="glass-card glass-card-hover p-6 rounded-2xl border-t-2 border-t-sky-400">
+          <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-guitar"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Audio & Music Production</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">Playing guitar, drums, and bass guitar. Active audio engineering and music production.</p>
+        </div>
+
+        <!-- Hobby 2 -->
+        <div class="glass-card glass-card-hover p-6 rounded-2xl border-t-2 border-t-purple-400">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-cube"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">CAD & 3D Modeling</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">Computer-Aided Design (CAD), custom 3D mechanical modeling, and rapid prototyping.</p>
+        </div>
+
+        <!-- Hobby 3 -->
+        <div class="glass-card glass-card-hover p-6 rounded-2xl border-t-2 border-t-pink-400">
+          <div class="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-film"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Video Editing</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">Digital video composition, post-production editing, motion dynamics, and storytelling.</p>
+        </div>
+
+        <!-- Hobby 4 -->
+        <div class="glass-card glass-card-hover p-6 rounded-2xl border-t-2 border-t-emerald-400">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-compass text-emerald-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Outdoor Recreation</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">Avid outdoorsman: fishing, hunting, kayaking, and backcountry camping trips.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-950/80 py-12 px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-slate-300">Matthew Good</span>
+        <span>•</span>
+        <span>Operational Leadership Portfolio</span>
+      </div>
+      <p>© 2026 Matthew Good. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Kip AI Modal Chat Window -->
+  <div id="kipModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md hidden transition-opacity duration-300">
+    <div class="glass-card w-full max-w-2xl h-[600px] max-h-[90vh] rounded-3xl flex flex-col overflow-hidden shadow-2xl border border-white/10">
+      
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl gradient-pill flex items-center justify-center text-white shadow-md">
+            <i class="fa-solid fa-robot text-lg"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-white flex items-center gap-2">
+              Kip AI
+              <span class="text-[10px] bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded-full font-mono border border-purple-500/30">Milo Core v3.2</span>
+            </h3>
+            <p class="text-xs text-slate-400">Matt's Witty, Sharp & Supportive Chief of Staff</p>
+          </div>
+        </div>
+        <button id="closeKipBtn" class="text-slate-400 hover:text-white p-2 rounded-lg hover:bg-slate-800 transition-colors">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Chat Stream Body -->
+      <div id="kipChatStream" class="flex-1 p-4 sm:p-6 overflow-y-auto space-y-4 font-sans text-sm">
+        
+        <!-- Default Initial Welcome Message -->
+        <div id="kipWelcomeMsg" class="flex gap-3">
+          <div class="w-8 h-8 rounded-lg gradient-pill flex items-center justify-center text-white shrink-0 text-xs">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <div class="bg-slate-800/90 border border-slate-700/80 p-4 rounded-2xl rounded-tl-none max-w-[85%] text-slate-200 space-y-2">
+            <p class="font-medium text-sky-400 text-xs font-mono">KIP AI</p>
+            <p>Well hello! I’m Kip—Matt Good’s AI Chief of Staff and unofficial hype engine.</p>
+            <p class="text-xs text-slate-300">Curious how Matt scaled 72,500+ device deployments, turned support into an enterprise talent pipeline, or earned Marine Corps commendations? Hit me with any question or pick a quick topic below!</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Prompt Suggestions (Chip Handlers Direct To Intent) -->
+      <div class="p-2 px-4 bg-slate-900/60 border-t border-slate-800/80 flex items-center gap-2 overflow-x-auto no-scrollbar">
+        <span class="text-[10px] text-slate-500 font-mono shrink-0 uppercase">Quick Topics:</span>
+        <button onclick="handleQuickChip('Tell me about Matt\'s leadership style.', 'leadership')" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1 rounded-full whitespace-nowrap border border-slate-700 transition-colors">Leadership style?</button>
+        <button onclick="handleQuickChip('How did he cut ramp time by 66%?', 'ramp')" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1 rounded-full whitespace-nowrap border border-slate-700 transition-colors">66% Ramp reduction?</button>
+        <button onclick="handleQuickChip('What is Matt\'s Marine Corps background?', 'usmc')" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1 rounded-full whitespace-nowrap border border-slate-700 transition-colors">USMC Logistics?</button>
+        <button onclick="handleQuickChip('How does he scale hardware rollouts?', 'hardware')" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1 rounded-full whitespace-nowrap border border-slate-700 transition-colors">Hardware Scale?</button>
+        <button onclick="handleQuickChip('What are his hobbies?', 'hobbies')" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1 rounded-full whitespace-nowrap border border-slate-700 transition-colors">Hobbies & Music?</button>
+      </div>
+
+      <!-- Chat Input Field -->
+      <form id="kipChatForm" class="p-3 sm:p-4 bg-slate-900/90 border-t border-slate-800 flex items-center gap-2">
+        <input id="kipInput" type="text" placeholder="Ask Kip anything about Matt's leadership, metrics, or background..." class="flex-1 bg-slate-950 border border-slate-700/80 rounded-xl px-4 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors">
+        <button type="submit" class="gradient-pill px-4 py-2.5 rounded-xl text-white font-medium text-sm flex items-center gap-2 shrink-0 shadow-md">
+          <span>Send</span>
+          <i class="fa-solid fa-paper-plane text-xs"></i>
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- JavaScript Logic & Kip Engine -->
+  <script>
+    // Metric Filter Function
+    function filterMetrics(category) {
+      const cards = document.querySelectorAll('.metric-card');
+      const tabs = document.querySelectorAll('.metric-tab');
+
+      tabs.forEach(tab => {
+        tab.classList.remove('bg-sky-500', 'text-white');
+        tab.classList.add('text-slate-400');
+      });
+      event.target.classList.add('bg-sky-500', 'text-white');
+
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Modal DOM Elements
+    const kipModal = document.getElementById('kipModal');
+    const openKipBtn = document.getElementById('openKipBtn');
+    const openKipBtnMobile = document.getElementById('openKipBtnMobile');
+    const closeKipBtn = document.getElementById('closeKipBtn');
+    const kipChatForm = document.getElementById('kipChatForm');
+    const kipInput = document.getElementById('kipInput');
+    const kipChatStream = document.getElementById('kipChatStream');
+
+    function openModal() {
+      kipModal.classList.remove('hidden');
+      kipInput.focus();
+    }
+
+    function closeModal() {
+      kipModal.classList.add('hidden');
+    }
+
+    openKipBtn.addEventListener('click', openModal);
+    openKipBtnMobile.addEventListener('click', openModal);
+    closeKipBtn.addEventListener('click', closeModal);
+
+    kipModal.addEventListener('click', (e) => {
+      if (e.target === kipModal) closeModal();
+    });
+
+    // Multi-Intent Response Engine (20+ categories with 3-4 dynamic variations each + Leadership Upselling)
+    const miloIntents = {
+      leadership: [
+        "If you're hiring an operations leader, here is what Matt brings: **Radical Accountability and Zero Talent Hoarding**. He trained and promoted 70+ agents into Tier 2, DevOps, PM, and NetOps, accounting for 87% of all support promotions company-wide. That proves he doesn't just manage teams—he builds high-performing leadership pipelines that elevate the entire company.",
+        "What makes Matt standout to hiring executives? **High Emotional Intelligence combined with operational clarity**. As Michael Zirpola put it: 'He is direct without being harsh, and patient with people who are still learning.' He gives people autonomy to make decisions, creating a high-trust culture where people stay and excel.",
+        "Matt’s philosophy is built around a rare trait: **Multiplier Leadership**. He doesn't hold top performers hostage to inflate his own team's metrics. He develops them so effectively that they move on to fuel other departments across the enterprise. That is the exact leadership trait that transforms company culture."
+      ],
+      ramp: [
+        "Let's look at the business impact: Cutting new-hire ramp time by **66%** isn't just an HR statistic—it's a massive financial saving. Matt overhauled onboarding to get 85% of reps cross-qualified across 37+ enterprise clients in under 1 year (shattering the historical 2-3 year benchmark). That shows he turns complex technical knowledge into repeatable, fast systems.",
+        "How did Matt achieve a 66% reduction in ramp time? By redesigning technical training into a modular, step-by-step curriculum paired with structured 360-degree QA feedback. For a hiring manager, this means Matt can walk into any support organization and immediately eliminate productivity bottlenecks.",
+        "Slashing ramp time from 3 years down to under 12 months is proof of Matt’s capability in **Process Architecture**. He creates structured knowledge transfer so reps gain multi-client fluency without sacrificing resolution accuracy."
+      ],
+      promotions: [
+        "Managing **87% of all company support leadership promotions** (70+ individuals) is Matt's defining metric. Why does this matter for your team? Because it proves Matt acts as an internal talent incubator. Hiring him means you aren't just solving a support problem—you're securing a long-term engine for company-wide talent.",
+        "70+ promotions into Tier 2, DevOps, Project Management, and Network Ops! That shows Matt’s rare eye for talent and his commitment to mentorship. As former team members note, he builds professionals who go on to lead departments.",
+        "High turnover kills support orgs. Matt solved this by creating a clear, merit-based career pathway. Managing 87% of all support promotions proves he keeps top talent engaged and growing within the organization."
+      ],
+      hardware: [
+        "Deploying and supporting **72,500+ active endpoints across 14,500 locations** requires ruthless logistical discipline. Matt scaled hiring, provisioning, and support frameworks for 30+ major hardware rollouts. If your company is scaling physical hardware or IoT devices, Matt is the guy who ensures zero-downtime cutovers.",
+        "What hiring managers love about Matt's hardware track record: He converted high-stakes client pilot rollouts into multi-million dollar, multi-year recurring contract renewals. He bridges the gap between hardware engineering and long-term customer success.",
+        "Scaling hardware rollouts from 3,000 to 72,500+ units requires a leader who anticipates failure points before they happen. Matt designed provisioning playbooks and NOC forecasting models that kept massive hardware deployments operating smoothly."
+      ],
+      usmc: [
+        "Matt’s 4+ years in the **United States Marine Corps** as a Supply Chain Operations Specialist give him something you can't teach in business school: **Battle-Tested Calm Under Pressure**. He earned a Certificate of Commendation for maintaining 100% force readiness for a tank platoon and managing multi-million dollar capital assets.",
+        "When you hire Matt, you get USMC discipline combined with compassionate enterprise leadership. In the Marines, he executed end-to-end procurement and 100% material accountability. That same operational rigor is how he manages complex tech support queues.",
+        " USMC Commendation recipient who maintained 100% force readiness for combat assets. Matt brings military precision, zero-excuses accountability, and deep respect for team cohesion to every operational challenge."
+      ],
+      fcr: [
+        "Data speaks volumes: Matt maintained an **85% Call FCR** while taking an inherited email support queue and raising its FCR from **75% to 91%**! He achieved this by building real-time KPI dashboards, tightening escalation workflows, and coaching reps directly.",
+        "Boosting email First Contact Resolution by 16% directly impacts the bottom line by eliminating thousands of redundant tickets. Matt approaches support with an engineer's mindset—fixing the root cause of friction rather than just closing tickets.",
+        "A 91% email FCR rate across complex enterprise hardware and software systems is nearly unheard of. It highlights Matt’s ability to build comprehensive Knowledge Bases and coach reps toward swift, decisive problem-solving."
+      ],
+      noc: [
+        "As NOC Supervisor, Matt engineered hourly call forecasting models that reduced inbound support call volume by **24%** and eliminated agent burnout. He also standardized proactive monitoring for 2.1 million deployed devices across 55+ enterprise clients.",
+        "Matt’s work in Network Operations proves he knows how to move an organization from reactive firefighting to automated, proactive prevention. He aligns staffing precisely with peak traffic to keep SLA performance at peak levels.",
+        "In the NOC, Matt trained 75+ support agents in 6 months for a 14,500-site rollout. His capability to scale NOC operations under tight deadlines makes him an invaluable asset for enterprise infrastructure."
+      ],
+      qa: [
+        "Matt designed a 360-degree QA and feedback model that transformed technical support. Instead of punitive scoring, he used QA to identify training gaps, enhance Knowledge Base clarity, and build confidence among Tier 1 and Tier 2 reps.",
+        "By replacing redundant ticket escalations with structured QA coaching, Matt reduced friction between Tier 1 support and Tier 2 engineering. That’s operational alignment in action!",
+        "Quality Assurance under Matt isn't a rubber stamp—it's an active coaching mechanism that raised team satisfaction for 5 consecutive years while continuously driving higher FCR."
+      ],
+      culture: [
+        "Measuring team culture isn't just fluff—it directly drives retention. Matt introduced voluntary, anonymous annual team feedback surveys to measure leadership effectiveness, driving **5 consecutive years of rising satisfaction scores**.",
+        "Matt builds high-trust cultures where people feel supported, recognized, and empowered. As Sam Puterbaugh stated: 'Many of the practices and management tactics I still deploy today came from Mr. Good.'",
+        "How do you build a winning support culture on a tight budget? Matt coordinated team recognition events and built a culture of genuine appreciation. When people feel valued, overall performance skyrockets."
+      ],
+      recommendations: [
+        "Matt's LinkedIn endorsements speak for themselves—direct reports like Sam Puterbaugh, Chris Stephens, and Michael Zirpola routinely say, *'I would work for Matt again, anytime.'* They praise his clarity, patience, and unwavering support for their career growth.",
+        "Michael Zirpola (VP of Product Management) wrote that Matt is 'a leader in the truest sense of the word.' Daniel Shepherd Jr noted that Matt has been a 'hugely positive influence' in both his career and life. You can read their verbatim quotes right on this page!",
+        "The ultimate test of a leader is what their former team members say when they no longer work for them. Matt's recommendations are filled with phrases like 'most supportive leader,' 'exceptional eye for talent,' and 'shining example of leadership.'"
+      ],
+      hobbies: [
+        "In addition to scaling enterprise ops, Matt is an active audio engineer and musician playing guitar, drums, and bass. He also designs custom 3D mechanical models in CAD, edits digital video, and enjoys backcountry kayaking, hunting, and fishing!",
+        "Matt’s personal pursuits reflect his structured, creative mind: CAD 3D modeling requires spatial precision, audio engineering demands fine-tuned signal analysis, and backcountry camping requires deep prep and self-reliance.",
+        "When Matt isn't building high-performing support teams, he's in his studio producing music, working on rapid 3D prototyping, or outdoors on the river. He brings that same creative focus into his daily work."
+      ],
+      why_hire: [
+        "Why hire Matt? Because he brings 16+ years of proven operational scale, USMC supply chain discipline, a track record of 70+ internal promotions, and the ability to cut ramp times by 66% while maintaining an 85-91% FCR rate. He builds systems that last.",
+        "If you need someone to turn support chaos into a well-oiled, self-sustaining machine while building a world-class team culture, Matt is your leader. He combines technical depth with high-trust talent development.",
+        "Matt solves the three biggest headaches in support operations: long onboarding ramp times, high turnover, and redundant escalations. His metrics prove he delivers results from day one."
+      ]
+    };
+
+    // Fallback Array for Unmatched Queries (Witty Milo Style)
+    const miloFallbacks = [
+      "That’s a unique angle! While my telemetry doesn't cover that exact phrase, I can tell you Matt excels at scaling hardware rollouts (72,500+ devices), cutting ramp time by 66%, and building high-trust leadership pipelines. What area would you like to explore?",
+      "Good question! I'm tuned specifically to Matt's 16+ year operational career, USMC logistics background, and leadership metrics. Want to dive into his 91% email FCR turnaround or his 70+ team promotions?",
+      "You're pushing into new territory! While I double-check that, keep in mind Matt brought email FCR from 75% to 91% and maintained 100% force readiness in the Marines. Ask me about his training frameworks or leadership style!",
+      "I like how you think! Let's focus on what makes Matt a standout hire: 16+ years scaling support infrastructure, 30+ major hardware deployments, and 5 consecutive years of rising team satisfaction scores."
+    ];
+
+    function getRandomItem(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function matchIntent(query) {
+      const q = query.toLowerCase();
+      if (q.includes('lead') || q.includes('style') || q.includes('manage') || q.includes('trust') || q.includes('philosophy')) return 'leadership';
+      if (q.includes('ramp') || q.includes('66') || q.includes('onboard') || q.includes('train')) return 'ramp';
+      if (q.includes('promote') || q.includes('70') || q.includes('87') || q.includes('pipeline') || q.includes('talent')) return 'promotions';
+      if (q.includes('hardware') || q.includes('72') || q.includes('device') || q.includes('rollout') || q.includes('deploy')) return 'hardware';
+      if (q.includes('usmc') || q.includes('marine') || q.includes('military') || q.includes('readiness') || q.includes('commendation')) return 'usmc';
+      if (q.includes('fcr') || q.includes('email') || q.includes('call') || q.includes('resolution') || q.includes('91') || q.includes('85')) return 'fcr';
+      if (q.includes('noc') || q.includes('network') || q.includes('forecasting') || q.includes('2.1') || q.includes('24')) return 'noc';
+      if (q.includes('qa') || q.includes('quality') || q.includes('coaching') || q.includes('kb') || q.includes('knowledge')) return 'qa';
+      if (q.includes('culture') || q.includes('satisfaction') || q.includes('survey') || q.includes('retention')) return 'culture';
+      if (q.includes('rec') || q.includes('recommendation') || q.includes('sam') || q.includes('michael') || q.includes('chris') || q.includes('daniel')) return 'recommendations';
+      if (q.includes('hobby') || q.includes('hobbies') || q.includes('music') || q.includes('guitar') || q.includes('cad') || q.includes('outdoor')) return 'hobbies';
+      if (q.includes('hire') || q.includes('why') || q.includes('qualify') || q.includes('value') || q.includes('fit')) return 'why_hire';
+      
+      return null;
+    }
+
+    // Direct Quick Chip Handler (Bypasses Re-introductions)
+    function handleQuickChip(questionText, intentKey) {
+      // 1. Hide welcome message if present
+      const welcome = document.getElementById('kipWelcomeMsg');
+      if (welcome) welcome.style.display = 'none';
+
+      // 2. Append User Bubble
+      appendUserBubble(questionText);
+
+      // 3. Append Typing Indicator
+      const typingId = appendTypingIndicator();
+
+      // 4. Respond with direct answers after short delay
+      setTimeout(() => {
+        removeTypingIndicator(typingId);
+        const answerText = getRandomItem(miloIntents[intentKey] || miloFallbacks);
+        appendKipBubble(answerText);
+      }, 350);
+    }
+
+    // Submit Custom Chat
+    function handleKipSubmit(e) {
+      e.preventDefault();
+      const userText = kipInput.value.trim();
+      if (!userText) return;
+
+      // Hide welcome message
+      const welcome = document.getElementById('kipWelcomeMsg');
+      if (welcome) welcome.style.display = 'none';
+
+      // Append User Bubble
+      appendUserBubble(userText);
+      kipInput.value = '';
+
+      // Append Typing Indicator
+      const typingId = appendTypingIndicator();
+
+      // Process intent
+      setTimeout(() => {
+        removeTypingIndicator(typingId);
+        const matchedKey = matchIntent(userText);
+        const answerText = matchedKey ? getRandomItem(miloIntents[matchedKey]) : getRandomItem(miloFallbacks);
+        appendKipBubble(answerText);
+      }, 400);
+    }
+
+    kipChatForm.addEventListener('submit', handleKipSubmit);
+
+    // DOM Rendering Helpers
+    function appendUserBubble(text) {
+      const bubble = document.createElement('div');
+      bubble.className = "flex gap-3 justify-end";
+      bubble.innerHTML = `
+        <div class="bg-sky-600 text-white p-3.5 rounded-2xl rounded-tr-none max-w-[85%] text-slate-100 shadow-md">
+          <p>${escapeHtml(text)}</p>
+        </div>
+      `;
+      kipChatStream.appendChild(bubble);
+      kipChatStream.scrollTop = kipChatStream.scrollHeight;
+    }
+
+    function appendKipBubble(text) {
+      const bubble = document.createElement('div');
+      bubble.className = "flex gap-3";
+      bubble.innerHTML = `
+        <div class="w-8 h-8 rounded-lg gradient-pill flex items-center justify-center text-white shrink-0 text-xs shadow-md">
+          <i class="fa-solid fa-robot"></i>
+        </div>
+        <div class="bg-slate-800/90 border border-slate-700/80 p-4 rounded-2xl rounded-tl-none max-w-[85%] text-slate-200 space-y-2 shadow-md">
+          <p class="font-medium text-sky-400 text-xs font-mono">KIP AI</p>
+          <div class="text-sm leading-relaxed">${formatMarkdown(text)}</div>
+        </div>
+      `;
+      kipChatStream.appendChild(bubble);
+      kipChatStream.scrollTop = kipChatStream.scrollHeight;
+    }
+
+    function appendTypingIndicator() {
+      const id = 'typing_' + Date.now();
+      const bubble = document.createElement('div');
+      bubble.id = id;
+      bubble.className = "flex gap-3";
+      bubble.innerHTML = `
+        <div class="w-8 h-8 rounded-lg gradient-pill flex items-center justify-center text-white shrink-0 text-xs shadow-md">
+          <i class="fa-solid fa-robot"></i>
+        </div>
+        <div class="bg-slate-800/90 border border-slate-700/80 p-3 rounded-2xl rounded-tl-none text-slate-400 text-xs font-mono flex items-center gap-2">
+          <span>Kip is analyzing telemetry</span>
+          <span class="animate-bounce">•</span>
+          <span class="animate-bounce" style="animation-delay: 0.2s">•</span>
+          <span class="animate-bounce" style="animation-delay: 0.4s">•</span>
+        </div>
+      `;
+      kipChatStream.appendChild(bubble);
+      kipChatStream.scrollTop = kipChatStream.scrollHeight;
+      return id;
+    }
+
+    function removeTypingIndicator(id) {
+      const el = document.getElementById(id);
+      if (el) el.remove();
+    }
+
+    function escapeHtml(text) {
+      return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function formatMarkdown(text) {
+      return text.replace(/\*\*(.*?)\*\*/g, '<strong class="t
